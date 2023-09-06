@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Game</title>
+    <link rel="stylesheet" href="css/sweetalert2.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section class="game">
+        <h1 class="name">🚀 Typing Speed Challenge</h1>
+        <div class="control">
+            <div class="score">
+                Your Score: <span class="got">0</span> / <span class="total"></span>
+            </div>
+            <label for="levelSelect" class="level_select_label">Choose Your Adventure:
+                <select id="levelSelect">
+                    <option value="Easy">Easy Mode</option>
+                    <option value="Medium">Medium Mode</option>
+                    <option value="Hard">Hard Mode</option>
+                </select>
+            </label>
+            <button class="show_instructions">Show Instructions</button>
+            <div class="time">Time Remaining: <span></span> Seconds</div>
+        </div>
+        <div class="container">
+            <div class="message">
+                You Are Playing On
+                <span class="lvl"></span> Level
+                & You Have <span class="seconds"></span> Seconds To Type The Word
+            </div>
+            <button class="start">Start Your Journey</button>
+            <div class="the-word"></div>
+            <div class="upcoming-words">More Challenges Await...</div>
+            <input type="text" class="input" placeholder="Type Here..."/>
+        </div>
+    </section>
+    <div class="instructions-overlay">
+        <div class="instructions-container">
+            <p>Welcome to the Word Game!</p>
+            <h3>Instructions:</h3>
+            <ul>
+                <li>Choose your preferred difficulty level from the options provided.</li>
+                <li>Your goal is to type the displayed words as quickly as possible before the timer runs out.</li>
+                <li>Click the "Start Your Journey" button to begin.</li>
+                <li>Type the word displayed in the center of the screen into the input field below it.</li>
+                <li>You earn one point for each correctly typed word.</li>
+                <li>The game ends when the timer reaches zero.</li>
+                <li>After winning, you can choose to "Keep Going!" to continue playing with a new set of words.</li>
+                <li>If you decide to start a new game, click "Start New Game.</li>
+            </ul>
+            <span class="close"><i class="fa-solid fa-xmark"></i></span>
+            <p>Enjoy the Game!</p>
+        </div>
+    </div>
+    <script src="javascript/sweetalert2.all.min.js"></script>
+    <script src="javascript/script.js"></script>
+</body>
+</html>

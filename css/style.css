@@ -1,0 +1,223 @@
+:root {
+    --main-color: #2196f3;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: "Open Sans", sans-serif;
+  }
+  .game {
+    background-color: #eee;
+    min-height: 100vh;
+  }
+  .container {
+    margin: auto;
+    max-width: 900px;
+  }
+  .name {
+    background-color: var(--main-color);
+    color: white;
+    padding: 20px;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .message {
+    background-color: white;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 6px;
+    text-align: center;
+  }
+  .message span {
+    font-weight: bold;
+    color: #009688;
+  }
+  .message span::before {
+    content: "[ ";
+  }
+  .message span::after {
+    content: " ]";
+  }
+  .start {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #009688;
+    color: white;
+    padding: 20px;
+    cursor: pointer;
+    border: none;
+  }
+  .the-word {
+    text-align: center;
+    font-weight: bold;
+    font-size: 60px;
+    color: var(--main-color);
+    user-select: none;
+  }
+  .input {
+    margin: 15px 0;
+    width: 100%;
+    display: block;
+    padding: 15px;
+    border: 2px solid transparent;
+    font-size: 20px;
+    text-align: center;
+    text-transform: capitalize;
+    border-radius: 6px;
+    caret-color: var(--main-color);
+  }
+  .input:focus {
+    outline: none;
+    border: 2px solid #333;
+  }
+  .upcoming-words {
+    background-color: white;
+    margin: 15px 0;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .upcoming-words div {
+    background-color: var(--main-color);
+    color: white;
+    font-weight: bold;
+    margin: 4px;
+    padding: 10px;
+    border-radius: 6px;
+  }
+  .control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 15px 20px;
+  }
+  .control span {
+    font-weight: bold;
+    color: #009688;
+  }
+  .finish {
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    padding: 15px;
+  }
+  .finish .good {
+    color: var(--main-color);
+  }
+  .finish .bad {
+    color: red;
+  }
+  .game-over,
+  .game_won {
+    position: fixed;
+    top: 1rem;
+    left: 5rem;
+    background-color: #ff0000cf;
+    width: 250px;
+    height: 70px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    z-index: 40;
+    font-weight: 900;
+    font-size: 19px;
+    transform: translateY(-200%);
+    transition: 0.3s;
+  }
+  .game_won {
+    background-color: #008000;
+  }
+.game-over.over-alert,
+.game_won.winner {
+    transform: translateY(0);
+}
+
+.level_select_label select {
+  height: 30px;
+  text-align: center;
+  padding: 0 20px;
+  margin: 0 5px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+}
+.show_instructions {
+  padding: 7px 10px;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s;
+}
+.instructions-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #33333370;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transform: scale(0);
+}
+.instructions-container {
+  position: relative;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  transform: scale(0);
+  transition: 0.3s;
+}
+.instructions-container p:first-child {
+  margin: 0 0 20px;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--main-color);
+  text-align: center;
+}
+.instructions-container h3 {
+  margin-bottom: 10px;
+}
+.instructions-container ul {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.instructions-container p:last-child {
+  margin: 40px 10px 0;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+}
+.instructions-container .close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.instructions-container .close:hover {
+  background-color: #33333330;
+}
+.instructions-overlay.visible,
+.instructions-overlay.visible .instructions-container {
+  transform: scale(1);
+}
